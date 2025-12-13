@@ -1,10 +1,13 @@
-class Reverse:
+class Class_reverse:
     def __init__(self,r):
         self.r=r
-    def reversed(self,w,reverse):
-        self.w=w
-        self.reverse=reverse
-        reverse = w-1
+    def reversed(self):
+        return self.r[::-1]
 
-w = str(input("Give a word "))
-print(w.reversed())
+word = input("Enter the word to be reversed : ")
+
+rev_ob = Class_reverse(word)
+
+result = rev_ob.reversed()
+
+print("Reversed String :", result)
