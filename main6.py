@@ -1,24 +1,32 @@
-class Animal:
-    def __init__(self,age):
-        self.age=age
-    def set_age(self,age):
-        self.age=age
+class car:
+    def __init__(self,type,speed):
+        self.type=type
+        self.speed=speed
+    def set_age(self,type,speed):
+        self.type=type
+        self.speed=speed
     def get_age(self):
-        return self.age
+        return self.type and self.speed
     
     def __Add__(self,predict):
-        return Animal(self.age+predict.age)
+        return car(self.type+predict.type) and car(self.speed+predict.speed)
     def __Gt__(self,predict):
-        return self.age>predict.age
+        return self.type>predict.type and self.speed>predict.speed
     def __Lt__(self,predict):
-        return self.age<predict.age
+        return self.type<predict.type and self.speed<predict.speed
     def __Str__(self):
-        return "Combined age "+str(self.age)
+        return "Combined speed "+str(self.speed)
+    def __str__(self):
+        return "Combined type"+str(self.type)
     
-c1 = Animal(5)
-print(c1.get_age())
+Bmw = car(5,12)
+print(Bmw.get_age())
+print(Bmw.__Add__)
+print(Bmw.__Gt__)
 
-c2 = Animal(6)
-print(c2.get_age())
+Ferrari = car(6,18)
+print(Ferrari.get_age())
+print(Ferrari.__Add__)
+print(Ferrari.__Gt__)
 
-print(c1<c2)
+print(Bmw<Ferrari)
